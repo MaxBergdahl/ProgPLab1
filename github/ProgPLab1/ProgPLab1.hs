@@ -14,13 +14,18 @@ fib n = if n > 1
 --rovarsprak s
 
 rovarsprak :: String -> String
---rovarsprak skriven Max Bergdahl
+--rovarsprak skriven av Max Bergdahl
 rovarsprak (s:b)
 	| not(elem s "aeiouy") = s:'o':s : rovarsprak(b)
 	| otherwise = s:rovarsprak(b)
 rovarsprak s = s
--- [1 | _ <- xs]
 -- a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z.
+--karpsravor skriven av Max Bergdahl
+karpsravor :: String -> String
+karpsravor (s:b)
+	| not(elem s "aeiouy") = s:karpsravor(drop 2 b)
+	| otherwise = s:karpsravor(b)
 karpsravor s = s
+--karpsdrop s = drop 2 s;
 medellangd s = 1.0
 skyffla s = s
