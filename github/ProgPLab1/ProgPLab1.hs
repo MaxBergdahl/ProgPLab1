@@ -35,4 +35,5 @@ medellangd (s:b)
 	| elem s " " = succ wordCount medellangd b
 medellangd s = totalSize `div` wordCount
 
+skyffla :: String -> String
 skyffla s = s
