@@ -1,4 +1,4 @@
--- Max Bergdahl och Niklas Bergdahl 7/9-15 --
+-- Max Bergdahl och Niklas Bergdahl 14/9-15 --
 module F1 where
 import Data.Char
 
@@ -26,14 +26,13 @@ karpsravor (s:b)
 	| otherwise = s:karpsravor b
 karpsravor s = s
 
-Double totalSize = 0
-Double wordCount = 1
+--medellangdHelp skriven av Max Bergdahl och Niklas Bergdahl
+medellangdHelp :: String -> String
+medellangdHelp s = [if not (isAlpha y) then ' ' else y | y<-s]
+
 --medellangd skriven av Max Bergdahl och Niklas Bergdahl
 medellangd :: String -> Double
-medellangd (s:b)
-	| s isAlpha = succ totalSize medellangd b
-	| elem s " " = succ wordCount medellangd b
-medellangd s = totalSize `div` wordCount
+medellangd s = fromIntegral(((length (medellangdHelp s)) - (length (words (medellangdHelp s))))) / fromIntegral((length (words (medellangdHelp s))))
+medellangd s = 1.0
 
-skyffla :: String -> String
 skyffla s = s
