@@ -32,7 +32,6 @@ medellangdHelp s = [if not (isAlpha y) then ' ' else y | y<-s]
 
 --medellangd skriven av Max Bergdahl och Niklas Bergdahl
 medellangd :: String -> Double
-medellangd s = fromIntegral(((length (medellangdHelp s)) - (length (words (medellangdHelp s))))) / fromIntegral((length (words (medellangdHelp s))))
-medellangd s = 1.0
+medellangd s = fromIntegral((length (unwords(words(medellangdHelp s)))+1) - (length (words (medellangdHelp s)))) / fromIntegral(length (words (medellangdHelp s)))
 
 skyffla s = s
